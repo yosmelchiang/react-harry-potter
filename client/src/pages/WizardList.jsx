@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 function WizardList() {
-  const API_URL = "https://react-harry-potter.onrender.com";
+  const API_URL = import.meta.env.VITE_API_URL;
   const [wizards, setWizards] = useState([]);
 
   useEffect(() => {

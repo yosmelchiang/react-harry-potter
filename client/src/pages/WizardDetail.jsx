@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 
 function WizardDetail() {
-  const API_URL = "https://react-harry-potter.onrender.com";
+  const API_URL = import.meta.env.VITE_API_URL;
   const { id } = useParams();
   const [wizard, setWizard] = useState(null);
 
