@@ -1,5 +1,5 @@
 
-# Harry Potter Full Stack App
+# Harry Potter Full Stack React App
 
 This is a full-stack web application that allows users to explore a list of Harry Potter wizards and their spells. The frontend is built with React (using Vite), and the backend is powered by Node.js with Express and Sequelize, connected to a MySQL database hosted on Aiven.
 
@@ -7,6 +7,9 @@ This is a full-stack web application that allows users to explore a list of Harr
 
 - Frontend (Netlify): [View Demo](https://bed1-bergen-yc.netlify.app/)
 - Backend API (Render): [View Demo](https://react-harry-potter.onrender.com/)
+
+## API Documentation
+- Available at [Swagger](https://react-harry-potter.onrender.com/api/v1/docs/)
 
 ## Tech Stack
 
