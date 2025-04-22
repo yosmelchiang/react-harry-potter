@@ -15,7 +15,7 @@ db.sync({ force: true })
   })
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`HTTP server is listening at http://localhost:${PORT}`);
+      console.log(`HTTP server is listening on: ${PORT}`);
     });
   })
   .catch(console.error());
