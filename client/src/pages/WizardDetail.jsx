@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const API_URL = "https://react-harry-potter.onrender.com";
 
 function WizardDetail() {
+  const API_URL = "https://react-harry-potter.onrender.com";
   const { id } = useParams();
   const [wizard, setWizard] = useState(null);
 

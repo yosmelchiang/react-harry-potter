@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const API_URL = "https://react-harry-potter.onrender.com";
 
 function WizardList() {
+  const API_URL = "https://react-harry-potter.onrender.com";
   const [wizards, setWizards] = useState([]);
 
   useEffect(() => {
