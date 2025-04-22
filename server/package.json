@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node --watch ."
+    "start": "node .watch"
   },
   "dependencies": {
     "@types/jest": "^29.5.14",

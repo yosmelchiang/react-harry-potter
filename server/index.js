@@ -7,11 +7,11 @@ const db = require('./models'),
 
 db.sync({ force: true })
   .then(() => {
-    House.bulkCreate(require('./data/houses.json'));
-    Wizard.bulkCreate(require('./data/wizards.json'));
-    Spell.bulkCreate(require('./data/spells.json'))
-    wizard_spell.bulkCreate(require('./data/wizard_spell.json'))
-    User.bulkCreate(require('./data/users.json'))
+    House.bulkCreate(require('./data/houses.json'), { ignoreDuplicates: true });
+    Wizard.bulkCreate(require('./data/wizards.json'), { ignoreDuplicates: true });
+    Spell.bulkCreate(require('./data/spells.json'), { ignoreDuplicates: true })
+    wizard_spell.bulkCreate(require('./data/wizard_spell.json'), { ignoreDuplicates: true })
+    User.bulkCreate(require('./data/users.json'), { ignoreDuplicates: true })
   })
   .then(() => {
     app.listen(PORT, () => {
