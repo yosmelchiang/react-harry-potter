@@ -18,6 +18,8 @@ info:
     | Yes | Admin | Y | Y | Y | Y |
 
 servers: 
+  - url: https://react-harry-potter.onrender.com//api/v1
+    description: Deployment server
   - url: http://localhost:3000/api/v1
     description: Local development server
 
@@ -193,6 +195,9 @@ components:
         HouseId:
           type: integer
           example: 1
+        image:
+          type: string
+          example: https://ik.imagekit.io/hpapi/harry.jpg
     CreateWizard:
       type: object
       properties:
@@ -214,6 +219,9 @@ components:
         HouseId:
           type: integer
           example: 1
+        image:
+          type: string
+          example: https://ik.imagekit.io/hpapi/harry.jpg
     UpdateWizard:
       type: object
       properties:
@@ -235,3 +243,6 @@ components:
         HouseId:
           type: integer
           example: 1
+        image:
+          type: string
+          example: https://ik.imagekit.io/hpapi/harry.jpg
