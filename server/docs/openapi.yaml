@@ -1,0 +1,237 @@
+openapi: 3.1.1
+
+info:
+  title: Harry Potter API
+  version: 1.0.0
+  description: |
+    Documentation for Harry Potter API
+    
+    ## CRUD Operations
+    ### Path
+    - `/api/v1/wizards`
+      
+    ### Authorisation
+    | Authenticated | Authorized | GET | POST | PUT | DELETE |
+    | --- | --- | --- | --- | --- | --- |
+    | No | None | Y | N | N | N |
+    | Yes | None | Y | Y | N | N |
+    | Yes | Admin | Y | Y | Y | Y |
+
+servers: 
+  - url: http://localhost:3000/api/v1
+    description: Local development server
+
+paths:
+  /login:
+    post:
+      tags:
+        - Auth
+      summary: Authenticate yourself
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: johnjohnson
+                password:
+                  type: string
+                  example: doedoson
+      responses:
+        "200":
+          description: Login successfully
+        "400":
+          description: Missing required parameters
+        "401":
+          description: Invalid credentials
+
+  /wizards:
+    get:
+      tags: 
+        - Wizards
+      summary: Get a all wizards
+      responses:
+        "200":
+          description: A list of wizards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Wizard'
+              example: 
+                - id: 1
+                  name: Harry Potter
+                  HouseId: 1
+                - id: 2
+                  name: Hermione Granger
+                  HouseId: 1
+                - id: 3
+                  name: Ron Weasley
+                  HouseId: 1
+                - id: 4
+                  name: Luna Lovegood
+                  HouseId: 3
+                - id: 5
+                  name: Draco Malfoy
+                  HouseId: 4
+    post:
+      security:
+        - BearerAuth: []
+      tags: 
+        - Wizards
+      summary: Create a wizard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateWizard'
+            example:
+              name: Luna Lovegood
+              gender: Female
+              ancestry: Pure-blood
+              patronus: Hare
+              isDarkWizard: false
+              HouseId: 1              
+      responses:
+        "201":
+          description: Wizard successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wizard'
+              example:
+                id: 6
+                name: Luna Lovegood
+                HouseId: 3
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+      
+  /wizards/{id}:
+    put:
+      security:
+        - BearerAuth: []    
+      tags: 
+        - Wizards
+      parameters: 
+      - $ref: '#/components/parameters/id'
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWizard'
+      responses:
+        "204":
+          description: Updates a wizard
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+    delete:
+      security:
+        - BearerAuth: []
+      tags: 
+        - Wizards
+      parameters: 
+      - $ref: '#/components/parameters/id'
+      responses:
+        "204":
+          description: Deletes a wizard
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+
+components:
+  responses:
+    Unauthorized:
+      description: Invalid authorization token
+    Forbidden:
+      description: Not permitted   
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: Bearer
+      bearerFormat: JWT
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      description: A unique identifier for a wizard
+      schema:
+        type: integer
+        example: 1
+  schemas:
+    Wizard:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Harry Potter
+        gender:
+          type: string
+          example: Male
+        ancestry:
+          type: string
+          example: Muggle-born
+        patronus:
+          type: string
+          example: Stag
+        isDarkWizard:
+          type: boolean
+          example: false
+        HouseId:
+          type: integer
+          example: 1
+    CreateWizard:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Harry Potter
+        gender:
+          type: string
+          example: Male
+        ancestry:
+          type: string
+          example: Muggle-born
+        patronus:
+          type: string
+          example: Stag
+        isDarkWizard:
+          type: boolean
+          example: false
+        HouseId:
+          type: integer
+          example: 1
+    UpdateWizard:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Harry Potter
+        gender:
+          type: string
+          example: Male
+        ancestry:
+          type: string
+          example: Muggle-born
+        patronus:
+          type: string
+          example: Stag
+        isDarkWizard:
+          type: boolean
+          example: false
+        HouseId:
+          type: integer
+          example: 1
