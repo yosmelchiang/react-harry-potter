@@ -26,6 +26,7 @@ function WizardDetail() {
 
   return (
     <div>
+      <img src={wizard.image} alt="wizard image" style={{ maxWidth: "200px", maxHeight: "200px"}}></img>
       <h2>{wizard.name}</h2>
       <p>Gender: {wizard.gender}</p>
       <p>Ancestry: {wizard.ancestry}</p>

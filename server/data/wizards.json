@@ -5,7 +5,8 @@
     "ancestry": "Half-blood",
     "patronus": "Stag",
     "isDarkWizard": false,
-    "HouseId": 1
+    "HouseId": 1,
+    "image": "https://ik.imagekit.io/hpapi/harry.jpg"
   },
   {
     "name": "Hermione Granger",
@@ -13,7 +14,8 @@
     "ancestry": "Muggle-born",
     "patronus": "Otter",
     "isDarkWizard": false,
-    "HouseId": 1
+    "HouseId": 1,
+    "image": "https://ik.imagekit.io/hpapi/hermione.jpeg"
   },
   {
     "name": "Draco Malfoy",
@@ -21,7 +23,8 @@
     "ancestry": "Pure-blood",
     "patronus": "None",
     "isDarkWizard": false,
-    "HouseId": 4
+    "HouseId": 4,
+    "image": "https://ik.imagekit.io/hpapi/draco.jpg"
   },
   {
     "name": "Tom Riddle",
@@ -29,7 +32,8 @@
     "ancestry": "Half-blood",
     "patronus": "None",
     "isDarkWizard": true,
-    "HouseId": 4
+    "HouseId": 4,
+    "image": "https://ik.imagekit.io/hpapi/voldemort.jpg"
   },
   {
     "name": "Bellatrix Lestrange",
@@ -37,7 +41,8 @@
     "ancestry": "Pure-blood",
     "patronus": "None",
     "isDarkWizard": true,
-    "HouseId": 4
+    "HouseId": 4,
+    "image": "https://ik.imagekit.io/hpapi/bellatrix.jpg"
   },
   {
     "name": "Luna Lovegood",
@@ -45,7 +50,8 @@
     "ancestry": "Pure-blood",
     "patronus": "Hare",
     "isDarkWizard": false,
-    "HouseId": 3
+    "HouseId": 3,
+    "image": "https://ik.imagekit.io/hpapi/luna.jpg"
   },
   {
     "name": "Severus Snape",
@@ -53,7 +59,8 @@
     "ancestry": "Half-blood",
     "patronus": "Doe",
     "isDarkWizard": false,
-    "HouseId": 4
+    "HouseId": 4,
+    "image": "https://ik.imagekit.io/hpapi/snape.jpg"
   },
   {
     "name": "Sirius Black",
@@ -61,7 +68,8 @@
     "ancestry": "Pure-blood",
     "patronus": "Dog",
     "isDarkWizard": false,
-    "HouseId": 1
+    "HouseId": 1,
+    "image": "https://potterdb.com/images/missing_character.svg"
   },
   {
     "name": "Gellert Grindelwald",
@@ -69,7 +77,8 @@
     "ancestry": "Pure-blood",
     "patronus": "None",
     "isDarkWizard": true,
-    "HouseId": 3
+    "HouseId": 3,
+    "image": "https://potterdb.com/images/missing_character.svg"
   },
   {
     "name": "Nymphadora Tonks",
@@ -77,6 +86,7 @@
     "ancestry": "Half-blood",
     "patronus": "Wolf",
     "isDarkWizard": false,
-    "HouseId": 2
+    "HouseId": 2,
+    "image": "https://potterdb.com/images/missing_character.svg"
   }
 ]

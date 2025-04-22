@@ -23,6 +23,9 @@ module.exports = (db, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false
     },
+    image: {
+      type: DataTypes.STRING,
+    }
 
   }, {
     timestamps: false
