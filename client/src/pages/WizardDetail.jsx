@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+const API_URL = "https://react-harry-potter.onrender.com";
+
 function WizardDetail() {
   const { id } = useParams();
   const [wizard, setWizard] = useState(null);
@@ -8,7 +10,7 @@ function WizardDetail() {
   useEffect(() => {
     async function loadWizard() {
       try {
-        const res = await fetch("http://localhost:3000/api/v1/wizards");
+        const res = await fetch(`${API_URL}/api/v1/wizards`);
         const allWizards = await res.json();
         const found = allWizards.data.find((w) => w.id === parseInt(id));
         setWizard(found);

@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+const API_URL = "https://react-harry-potter.onrender.com";
+
 function WizardList() {
   const [wizards, setWizards] = useState([]);
 
   useEffect(() => {
     async function loadWizards() {
       try {
-        const res = await fetch("http://localhost:3000/api/v1/wizards");
+        const res = await fetch(`${API_URL}/api/v1/wizards`);
         if (res.ok) {
           const data = await res.json();
           setWizards(data.data); // This updates the UI automatically!
