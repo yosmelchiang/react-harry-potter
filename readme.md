@@ -5,8 +5,11 @@ This is a full-stack web application that allows users to explore a list of Harr
 
 ## Live Demo
 
-- Frontend (Netlify): [View Demo](https://bed1-bergen-yc.netlify.app/)
+Make sure to wake up the api server first
 - Backend API (Render): [View Demo](https://react-harry-potter.onrender.com/)
+
+Then visit to frontend
+- Frontend (Netlify): [View Demo](https://bed1-bergen-yc.netlify.app/)
 
 ## API Documentation
 - Available at [Swagger](https://react-harry-potter.onrender.com/api/v1/docs/)
