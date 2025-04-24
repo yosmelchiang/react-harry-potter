@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import './WizardList.css'
 
 function WizardList() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -35,19 +35,27 @@ function WizardList() {
     if(wizards.length === 0) {
       return (
       <div>
-      <p>API service is either down or no wizards found in the database...</p>
-      <a href={API_URL} target="_blank">Click here to wake up the API service then try again</a>
+      <p>Loading...</p>
+      <p>If this is taking too long that means the API service is either down or no wizards found in the database...</p>
+      <a href={API_URL} target="_blank">Click here to wake up the API service then come back here and try again</a>
       </div>
       )
     } else {
       return (
-      <ul>
-      {wizards.map((wizard) => (
-        <li key={wizard.id}>
-          <Link to={`/wizards/${wizard.id}`}>{wizard.name}</Link>
-        </li>
-      ))}
-    </ul>
+        <div>
+          <ul className="wizard-grid">
+            {wizards.map((wizard) => (
+              <div className="wizard-card">
+              <li key={wizard.id}>
+                <Link to={`/wizards/${wizard.id}`}>
+                <img src={wizard.image} alt={wizard.name}></img>
+                <h3>{wizard.name}</h3>
+                </Link>
+              </li>
+              </div>
+            ))}
+          </ul>
+        </div>
       )
     }
   }

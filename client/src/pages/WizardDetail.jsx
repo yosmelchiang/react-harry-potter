@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
 function WizardDetail() {
   const API_URL = import.meta.env.VITE_API_URL;
   const { id } = useParams();
