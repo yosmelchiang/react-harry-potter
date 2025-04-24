@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './WizardList.css'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function WizardList() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -35,7 +36,12 @@ function WizardList() {
     if(wizards.length === 0) {
       return (
       <div>
-      <p>Loading...</p>
+        <div style={{display: "flex"}}>
+
+        <DotLottieReact src="/magicCube.lottie" loop autoplay style={{width: '200px', height: '200px'}}/>
+        <DotLottieReact src="/magician.lottie" loop autoplay style={{width: '200px', height: '200px'}}/>
+        </div>
+      <h1>Loading...</h1>
       <p>If this is taking too long that means the API service is either down, not waking up or there are no wizards in the database...</p>
       <a href={API_URL} target="_blank">Click here to wake up the API service then come back here and try again</a>
       </div>
