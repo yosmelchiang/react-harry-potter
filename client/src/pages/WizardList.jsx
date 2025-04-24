@@ -36,7 +36,7 @@ function WizardList() {
       return (
       <div>
       <p>Loading...</p>
-      <p>If this is taking too long that means the API service is either down or no wizards found in the database...</p>
+      <p>If this is taking too long that means the API service is either down, not waking up or there are no wizards in the database...</p>
       <a href={API_URL} target="_blank">Click here to wake up the API service then come back here and try again</a>
       </div>
       )
