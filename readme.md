@@ -1,5 +1,5 @@
 
-# Harry Potter Full Stack React App
+# Harry Potter React Single Page Application
 
 This is a full-stack web application that allows users to explore a list of Harry Potter wizards and their spells. The frontend is built with React (using Vite), and the backend is powered by Node.js with Express and Sequelize, connected to a MySQL database hosted on Aiven.
 
