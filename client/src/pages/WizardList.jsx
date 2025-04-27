@@ -6,7 +6,6 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 // We need to tell vite to treat these files as static assets in vite.config.js by adding: assetsInclude: ['**/*.lottie]
 // If we instead place them in public, theyll be treated as static assets by vite automatically
 import magician from '../assets/magician.lottie'
-import walkingCoffee from '../assets/walkingCoffee.lottie'
 
 function WizardList() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -41,13 +40,12 @@ function WizardList() {
     if(wizards.length === 0) {
       return (
       <div>
-        <div style={{display: "flex"}}>
+        <div style={{display: "flex", justifyContent: "center"}}>
 
-        <DotLottieReact src={walkingCoffee} loop autoplay style={{width: '200px', height: '200px'}}/>
         <DotLottieReact src={magician} loop autoplay style={{width: '200px', height: '200px'}}/>
         </div>
-      <h1>Loading...</h1>
-      <p>If this is taking too long that means the API service is either down, not waking up or there are no wizards in the database...</p>
+      <h1>Summoning wizards...</h1>
+      <p>If this is taking too long it means the API service is either down, not waking up or there are no wizards in the database...</p>
       <a href={API_URL} target="_blank">Click here to wake up the API service then come back here and try again</a>
       </div>
       )
@@ -73,7 +71,6 @@ function WizardList() {
 
   return (
     <div>
-      <h2>All Wizards</h2>
       <DisplayWizards />
     </div>
   );
