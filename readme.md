@@ -3,11 +3,6 @@
 
 This is a full-stack web application that allows users to explore a list of Harry Potter wizards and their spells. The frontend is built with React (using Vite), and the backend is powered by Node.js with Express and Sequelize, connected to a MySQL database hosted on Aiven.
 
-## Live Demo
-
-- Frontend (Netlify): [View Demo](https://bed1-bergen-yc.netlify.app/)
-- Backend API (Render): [View Demo](https://react-harry-potter.onrender.com/)
-
 ## API Documentation
 - Available at [Swagger](https://react-harry-potter.onrender.com/api/v1/docs/)
 
@@ -20,9 +15,9 @@ This is a full-stack web application that allows users to explore a list of Harr
 
 ### Backend
 - Node.js with Express
-- Sequelize ORM (MySQL)
-- Database hosted on Aiven
+- MySQL and Sequelize ORM
 - Deployed on Render
+- Database hosted on Aiven
 
 ## Getting Started
 
@@ -95,7 +90,7 @@ npm run dev
 - Base directory: `client`
 - Build command: `npm run build`
 - Publish directory: `client/dist`
-- Environment variable:  
+- Required environment variable:  
   `VITE_API_URL=https://react-harry-potter.onrender.com`
 
 ### Backend (Render)
@@ -127,3 +122,24 @@ Student at Noroff School of Technology and Digital Media
 ## License
 
 This project is open-source and available for educational and non-commercial use.
+
+## Live Demo
+
+- Frontend (Netlify): [View Demo](https://bed1-bergen-yc.netlify.app/)
+- Backend API (Render): [View Demo](https://react-harry-potter.onrender.com/)
+
+---
+
+<details open> 
+
+<summary>
+Preview
+</summary>
+
+- List of Wizards
+  ![alt text](image.png)
+
+- Wizard
+- ![alt text](image-1.png)
+
+</details>
