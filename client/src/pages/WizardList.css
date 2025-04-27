@@ -1,19 +1,21 @@
 .wizard-grid {
+  /* Creates a grid where each cell is 200px wide and with a 10x gap between them, the amount of columns is handled by media queries for responsiveness */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  width: 100%;
-  max-width: 1200px;
-  padding: 1rem;
+  gap: 10px;
+  height: 80vh;
 }
 
 .wizard-card {
-  background-color: #1e1e1e;
-  border: 1px solid #3a3a3a;
-  border-radius: 8px;
-  padding: 1rem;
+  /* Using flexbox to center the content of every card horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: white;
+  height: 40vh;
+  
+  /* Background, hover animation and border styling */
+  background-color: #1e1e1e;
+  border-radius: 8px;
   transition: transform 0.2s ease;
 }
 
@@ -22,8 +24,25 @@
 }
 
 .wizard-card img {
-  max-width: 100%;
-  max-height: 150px;
-  object-fit: cover;
+  max-width: fit-content;
+  max-height: 170px;
   border-radius: 4px;
+}
+
+@media (min-width: 320px) {
+  .wizard-grid {
+    grid-template-columns: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .wizard-grid {
+    grid-template-columns: 200px 200px 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wizard-grid {
+    grid-template-columns: 200px 200px 200px 200px;
+  }
 }
